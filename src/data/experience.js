@@ -1,0 +1,57 @@
+/**
+ * EXPERIENCE & EDUCATION DATA SOURCE ("JOURNEY")
+ */
+
+export const EXPERIENCES = [
+  {
+    period: "2025 – 2026",
+    type: "Internship",
+    role: "Integration Intern (Stage d'intégration — 2 mois)",
+    organization: "AsteelFlash",
+    location: "Tunisia",
+    description: "Completed a 2-month integration internship (stage d'intégration de 2 mois) at AsteelFlash, engaging directly with operational systems, industrial processes, and technical workflow integration.",
+    highlights: [
+      "Completed a 2-month professional integration immersion within industrial manufacturing services",
+      "Gained hands-on experience in cross-functional engineering processes and technical system integration",
+      "Observed quality control protocols, electronic assembly workflows, and departmental coordination"
+    ]
+  },
+  {
+    period: "Oct 2023 – Present",
+    type: "Professional",
+    role: "Freelance Graphic Designer & Brand Consultant",
+    organization: "Independent Contractor",
+    location: "Ariana, Tunisia (Remote & Client Work)",
+    description: "Designing end-to-end visual identities, custom vector logos, commercial posters, event badges, and corporate business cards for clients. Producing dynamic video content and motion graphics using Photoshop, Illustrator, Premiere Pro, and After Effects.",
+    highlights: [
+      "Delivered branding collateral and graphic assets for diverse online and local businesses",
+      "Managed client relations, design specifications, and iterative feedback cycles",
+      "Balanced design deliverables with academic software engineering commitments"
+    ]
+  },
+  {
+    period: "Current",
+    type: "Education",
+    role: "Software Engineering Student",
+    organization: "ESPRIT School of Engineering",
+    location: "Ariana, Tunisia",
+    description: "Comprehensive software engineering curriculum at ESPRIT covering enterprise architectures with Spring Boot and Angular, Symfony web applications, system programming in Java and C++, and DevOps/observability practices.",
+    highlights: [
+      "Architecting enterprise backend services in Spring Boot and reactive SPAs in Angular",
+      "Developing web platforms with Symfony and implementing telemetry/monitoring pipelines",
+      "Collaborating in agile team sprints to design, implement, and present technical projects"
+    ]
+  },
+  {
+    period: "2022 – 2023",
+    type: "Education",
+    role: "Computer Science Licence",
+    organization: "ISIM (Higher Institute of Computer Science and Multimedia)",
+    location: "Tunisia",
+    description: "Foundational university study in computer science fundamentals, algorithmic problem solving, digital mathematics, and software logic before joining the engineering cycle at ESPRIT.",
+    highlights: [
+      "Mastered programming fundamentals, computational thinking, and data modeling",
+      "Developed early passion for marrying software engineering with digital design"
+    ]
+  }
+];

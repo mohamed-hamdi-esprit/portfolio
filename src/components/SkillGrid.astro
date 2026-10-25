@@ -1,0 +1,112 @@
+---
+import { SKILL_CATEGORIES, SKILLS } from '../data/skills.js';
+---
+
+<section id="skills" class="skills-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Capabilities</span>
+      <h2>Technical & Creative Arsenal</h2>
+      <p class="lead">From core systems and algorithmic development to visual identity design and motion graphics.</p>
+    </div>
+
+    <!-- Skill Filter Tabs -->
+    <div class="filter-tabs" role="group" aria-label="Filter skills by domain">
+      {SKILL_CATEGORIES.map((cat, index) => (
+        <button
+          class="filter-tab"
+          data-skill-filter={cat.id}
+          aria-pressed={index === 0 ? "true" : "false"}
+        >
+          {cat.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="skills-grid" id="skills-container">
+      {SKILLS.map((skill) => (
+        <div class="skill-card" data-skill-category={skill.category}>
+          <div class="skill-card-top">
+            <span class="skill-category-tag">{skill.categoryLabel}</span>
+            <span class="skill-level-badge">{skill.level}</span>
+          </div>
+          <h3 class="skill-name">{skill.name}</h3>
+          <p class="skill-detail">{skill.detail}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-section {
+    border-top: 1px solid var(--line-subtle);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 1.35rem 1.45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+    transition: transform var(--duration-fast) var(--ease-spring),
+                border-color var(--duration-fast),
+                box-shadow var(--duration-fast);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  }
+
+  .skill-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px var(--accent-glow);
+  }
+
+  .skill-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.85rem;
+  }
+
+  .skill-category-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--mute);
+    letter-spacing: 0.04em;
+  }
+
+  .skill-level-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-full);
+    background: var(--soft);
+    color: var(--accent);
+  }
+
+  .skill-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    color: var(--ink);
+  }
+
+  .skill-detail {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--mute);
+    margin-bottom: 0;
+  }
+</style>

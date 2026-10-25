@@ -1,0 +1,100 @@
+:root {
+  /* Fonts */
+  --font-display: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 5rem;
+  --container-max: 1160px;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Light Theme (Default) */
+  --bg: #f8fafc;
+  --bg-gradient: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --surface-elevated: #ffffff;
+  --ink: #0f172a;
+  --ink-secondary: #334155;
+  --mute: #64748b;
+  --line: #e2e8f0;
+  --line-subtle: #edf2f7;
+  --glass-bg: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(226, 232, 240, 0.8);
+  
+  /* Persona Accents (Dev default) */
+  --accent: #3b82f6;
+  --accent-rgb: 59, 130, 246;
+  --accent-hover: #2563eb;
+  --accent-ink: #ffffff;
+  --soft: #eff6ff;
+  --accent-glow: rgba(59, 130, 246, 0.25);
+  --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+  --card-shadow-hover: 0 20px 40px -15px rgba(59, 130, 246, 0.22);
+}
+
+/* Designer Persona in Light Theme */
+:root[data-mode="design"] {
+  --accent: #f43f5e;
+  --accent-rgb: 244, 63, 94;
+  --accent-hover: #e11d48;
+  --accent-ink: #ffffff;
+  --soft: #fff1f2;
+  --accent-glow: rgba(244, 63, 94, 0.28);
+  --card-shadow-hover: 0 20px 40px -15px rgba(244, 63, 94, 0.25);
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+  --bg: #090d16;
+  --bg-gradient: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(9, 13, 22, 0) 70%);
+  --surface: #111726;
+  --surface-alt: #161e31;
+  --surface-elevated: #1a233a;
+  --ink: #f8fafc;
+  --ink-secondary: #cbd5e1;
+  --mute: #94a3b8;
+  --line: #1e293b;
+  --line-subtle: #162032;
+  --glass-bg: rgba(17, 23, 38, 0.85);
+  --glass-border: rgba(30, 41, 59, 0.8);
+
+  --accent: #60a5fa;
+  --accent-rgb: 96, 165, 250;
+  --accent-hover: #3b82f6;
+  --accent-ink: #090d16;
+  --soft: #172554;
+  --accent-glow: rgba(96, 165, 250, 0.25);
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --card-shadow-hover: 0 20px 45px -12px rgba(96, 165, 250, 0.35);
+}
+
+/* Designer Persona in Dark Theme */
+:root[data-theme="dark"][data-mode="design"] {
+  --accent: #fb7185;
+  --accent-rgb: 251, 113, 133;
+  --accent-hover: #f43f5e;
+  --accent-ink: #090d16;
+  --soft: #4c0519;
+  --accent-glow: rgba(251, 113, 133, 0.3);
+  --card-shadow-hover: 0 20px 45px -12px rgba(251, 113, 133, 0.35);
+}

@@ -1,0 +1,186 @@
+---
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import SkillGrid from '../components/SkillGrid.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Timeline from '../components/Timeline.astro';
+import ContactForm from '../components/ContactForm.astro';
+import ProjectModal from '../components/ProjectModal.astro';
+import Footer from '../components/Footer.astro';
+import { PROJECTS } from '../data/projects.js';
+import { PROFILE } from '../data/profile.js';
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>Mohamed Hamdi · Software Engineer & Graphic Designer</title>
+    <meta name="title" content="Mohamed Hamdi · Software Engineer & Graphic Designer" />
+    <meta name="description" content="Portfolio of Mohamed Hamdi, software engineering student at ESPRIT and freelance graphic designer based in Ariana, Tunisia. Highlighting desktop systems, web apps, and brand design." />
+    <meta name="author" content="Mohamed Hamdi" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mohamed Hamdi · Software Engineer & Graphic Designer" />
+    <meta property="og:description" content="Software engineering student at ESPRIT and freelance designer based in Ariana, Tunisia. Explore featured software and design projects." />
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+
+  <body>
+    <!-- Navigation Header -->
+    <Header />
+
+    <main id="main-content">
+      <!-- Hero Section with Persona Switcher -->
+      <Hero />
+
+      <!-- About Section -->
+      <About />
+
+      <!-- Skills Arsenal -->
+      <SkillGrid />
+
+      <!-- Selected Work Projects -->
+      <section id="work" class="work-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Portfolio</span>
+            <h2>Selected Engineering & Design Work</h2>
+            <p class="lead">
+              Click any project to inspect technical architecture, features, and links. Use the filter tabs below to navigate by craft.
+            </p>
+          </div>
+
+          <!-- Project Filter Tabs -->
+          <div class="filter-tabs" id="project-filter-group" role="group" aria-label="Filter projects by domain">
+            <button class="filter-tab" data-project-filter="all" aria-pressed="true">
+              All Works
+            </button>
+            <button class="filter-tab" data-project-filter="dev" aria-pressed="false">
+              Software Engineering
+            </button>
+            <button class="filter-tab" data-project-filter="des" aria-pressed="false">
+              Design & Motion
+            </button>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="projects-grid" id="projects-grid">
+            {PROJECTS.map((project) => (
+              <ProjectCard project={project} />
+            ))}
+
+            <!-- Future Project Slot Card -->
+            <div class="slot-card" aria-hidden="true">
+              <div class="slot-content">
+                <div class="slot-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </div>
+                <h4 class="slot-title">More In Active Development</h4>
+                <p class="slot-desc">New software architecture & design projects being documented for release.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Journey / Experience Timeline -->
+      <Timeline />
+
+      <!-- Contact & Inquiry -->
+      <ContactForm />
+    </main>
+
+    <!-- Modal Dialog for Project Details -->
+    <ProjectModal />
+
+    <!-- Site Footer -->
+    <Footer />
+
+    <!-- Controllers & Logic Scripts -->
+    <script>
+      import { initTheme } from '../scripts/theme.js';
+      import { initFilters } from '../scripts/filters.js';
+      import { initModal } from '../scripts/modal.js';
+
+      // Bootstrap all interactive controllers
+      initTheme();
+      initFilters();
+      initModal();
+    </script>
+  </body>
+</html>
+
+<style>
+  .work-section {
+    border-top: 1px solid var(--line-subtle);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .slot-card {
+    border: 2px dashed var(--line);
+    border-radius: var(--radius-lg);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+    padding: 2rem;
+    text-align: center;
+    transition: border-color var(--duration-fast);
+  }
+
+  .slot-card:hover {
+    border-color: var(--accent);
+  }
+
+  .slot-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 260px;
+  }
+
+  .slot-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    background: var(--soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slot-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .slot-desc {
+    font-size: 0.88rem;
+    color: var(--mute);
+    line-height: 1.5;
+  }
+</style>

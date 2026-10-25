@@ -1,0 +1,306 @@
+---
+import { PROFILE } from '../data/profile.js';
+---
+
+<section id="hero" class="hero-section">
+  <div class="hero-ambient-glow" aria-hidden="true"></div>
+
+  <div class="container hero-container">
+    <!-- Persona Switcher -->
+    <div class="persona-switch-wrapper">
+      <span class="persona-label">Perspective:</span>
+      <div class="persona-switch" role="group" aria-label="Toggle portfolio focus perspective">
+        <button id="mode-dev" class="persona-btn" aria-pressed="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          <span>Developer</span>
+        </button>
+        <button id="mode-des" class="persona-btn" aria-pressed="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+            <path d="M2 2l7.586 7.586"></path>
+            <circle cx="11" cy="11" r="2"></circle>
+          </svg>
+          <span>Designer</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Headline -->
+    <div class="hero-content">
+      <div class="badge-status">
+        <span class="status-pulse"></span>
+        <span>Available for Internships & Junior Roles</span>
+      </div>
+
+      <h1 class="hero-title">
+        Mohamed<br />
+        <span class="hero-surname">Hamdi</span>
+      </h1>
+
+      <div class="hero-role-wrapper">
+        <span class="role-prefix">Focus &rsaquo;</span>
+        <div id="typewriter-role" class="typewriter-role" aria-live="polite">
+          Software Engineering Student
+        </div>
+      </div>
+
+      <p id="hero-lead" class="lead hero-lead">
+        {PROFILE.modes.dev.lead}
+      </p>
+
+      <!-- Action CTAs -->
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">
+          <span>Explore Selected Work</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M7 17l9.2-9.2M17 17V8H8"></path>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <span>Get in Touch</span>
+        </a>
+        <a href="https://github.com/mohamedhamdi" target="_blank" rel="noopener noreferrer" class="btn btn-sm social-pill" aria-label="GitHub Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+
+      <!-- Quick Facts -->
+      <ul class="quick-facts">
+        <li>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          <span>Software Engineering Student at ESPRIT</span>
+        </li>
+        <li>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>Freelance Designer since Oct 2023</span>
+        </li>
+        <li>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Ariana, Tunisia</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding: 4.5rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-ambient-glow {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 650px;
+    height: 400px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    filter: blur(80px);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+    transition: background var(--duration-slow) var(--ease-spring);
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .persona-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .persona-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--mute);
+  }
+
+  .persona-switch {
+    display: inline-flex;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-full);
+    padding: 4px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  }
+
+  .persona-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border-radius: var(--radius-full);
+    padding: 0.5rem 1.1rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--mute);
+    transition: all var(--duration-fast) var(--ease-spring);
+  }
+
+  .persona-btn:hover {
+    color: var(--ink);
+  }
+
+  .persona-btn[aria-pressed="true"] {
+    background: var(--accent);
+    color: var(--accent-ink);
+    box-shadow: 0 2px 10px var(--accent-glow);
+  }
+
+  .badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink-secondary);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 1.25rem;
+  }
+
+  .status-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: pulseGlow 2s infinite;
+  }
+
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+  }
+
+  .hero-title {
+    margin-bottom: 1rem;
+  }
+
+  .hero-surname {
+    color: var(--ink);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-role-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1.25rem 0 1rem;
+  }
+
+  .role-prefix {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--mute);
+  }
+
+  .typewriter-role {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    color: var(--accent);
+    min-height: 1.3em;
+    letter-spacing: -0.02em;
+    transition: color var(--duration-normal);
+  }
+
+  .hero-lead {
+    max-width: 620px;
+    font-size: 1.15rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .social-pill {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+  }
+
+  .social-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .quick-facts {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  .quick-facts li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-full);
+    padding: 0.5rem 1rem;
+    font-size: 0.88rem;
+    color: var(--mute);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  }
+
+  .quick-facts li svg {
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .hero-actions .btn {
+      width: 100%;
+    }
+  }
+</style>

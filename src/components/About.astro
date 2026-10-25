@@ -1,0 +1,188 @@
+---
+import { PROFILE } from '../data/profile.js';
+---
+
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="grid-2">
+      <div class="about-intro">
+        <span class="section-tag">Philosophy</span>
+        <h2>One person, two crafts.</h2>
+        <div class="languages-block">
+          <span class="lang-title">Working Languages:</span>
+          <div class="lang-pills">
+            {PROFILE.languages.map(lang => (
+              <span class="lang-pill">
+                <span class="lang-name">{lang.name}</span>
+                <span class="lang-level">{lang.level}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="about-body">
+        <div class="about-paragraphs">
+          {PROFILE.bio.map(paragraph => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+
+        <div class="crafts-cards">
+          <div class="craft-card">
+            <div class="craft-icon dev-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <div class="craft-content">
+              <h3>Engineering Mindset</h3>
+              <p>Disciplined backend structures in Java, C++, and Symfony. Focused on maintainability, modularity, and event-driven data flow.</p>
+            </div>
+          </div>
+
+          <div class="craft-card">
+            <div class="craft-icon des-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              </svg>
+            </div>
+            <div class="craft-content">
+              <h3>Design Sensibility</h3>
+              <p>Practical freelance experience in vector branding, print layouts, and video motion. A rare blend that makes coded UIs feel complete.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    border-top: 1px solid var(--line-subtle);
+  }
+
+  .about-intro h2 {
+    margin-bottom: 2rem;
+  }
+
+  .languages-block {
+    margin-top: 2rem;
+  }
+
+  .lang-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--mute);
+    margin-bottom: 0.75rem;
+  }
+
+  .lang-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .lang-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--soft);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+  }
+
+  .lang-name {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .lang-level {
+    color: var(--mute);
+    font-size: 0.8rem;
+  }
+
+  .about-paragraphs p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .crafts-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 680px) {
+    .crafts-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .craft-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    transition: transform var(--duration-fast), border-color var(--duration-fast);
+  }
+
+  .craft-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+
+  .craft-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dev-icon {
+    background: #eff6ff;
+    color: #2563eb;
+  }
+
+  :root[data-theme="dark"] .dev-icon {
+    background: #172554;
+    color: #60a5fa;
+  }
+
+  .des-icon {
+    background: #fff1f2;
+    color: #e11d48;
+  }
+
+  :root[data-theme="dark"] .des-icon {
+    background: #4c0519;
+    color: #fb7185;
+  }
+
+  .craft-content h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .craft-content p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+</style>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohamed Hamdi · Software Engineer & Graphic Designer</title>
+<meta name="description" content="Portfolio of Mohamed Hamdi, software engineering student at ESPRIT and freelance graphic designer based in Ariana, Tunisia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f9;--surface:#fff;--ink:#121a2b;--mute:#5b6577;--line:#d9dfea;--accent:#2f4bff;--accent-ink:#fff;--soft:#e6ebff;
+--display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--body:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+:root[data-mode="design"]{--accent:#e8336d;--soft:#ffe4ed}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--surface:#161e33;--ink:#eef1f8;--mute:#9aa5bb;--line:#27314a;--accent:#7b8cff;--accent-ink:#0e1424;--soft:#1f2850;color-scheme:dark}
+:root:not([data-theme="light"])[data-mode="design"]{--accent:#ff6f9c;--soft:#3a1c2b}}
+:root[data-theme="dark"]{--bg:#0e1424;--surface:#161e33;--ink:#eef1f8;--mute:#9aa5bb;--line:#27314a;--accent:#7b8cff;--accent-ink:#0e1424;--soft:#1f2850;color-scheme:dark}
+:root[data-theme="dark"][data-mode="design"]{--accent:#ff6f9c;--soft:#3a1c2b}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);transition:background .3s,color .3s}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:88px 0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:18px;height:64px}
+.logo{font:800 1.15rem var(--display);text-decoration:none;margin-right:auto}
+.logo i{font-style:normal;color:var(--accent)}
+nav a.l{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--mute);padding:6px 2px;border-bottom:2px solid transparent}
+nav a.l:hover,nav a.l.on{color:var(--ink);border-color:var(--accent)}
+.ib{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.1rem}
+#menu{display:none}
+@media(max-width:760px){#menu{display:block}nav a.l{display:none}nav.open a.l{display:block}
+nav.open{flex-wrap:wrap;height:auto;padding:12px 0}nav.open .logo{width:calc(100% - 100px)}nav.open a.l{width:100%;padding:10px 0}}
+.btn{display:inline-block;font:600 1rem var(--body);padding:13px 24px;border-radius:999px;text-decoration:none;border:1.5px solid var(--ink);cursor:pointer;background:none;color:var(--ink);transition:transform .15s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+/* hero */
+#hero{padding:72px 0 64px}
+.switch{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:28px}
+.switch button{border:0;background:none;color:var(--mute);font:600 .95rem var(--body);padding:9px 20px;border-radius:999px;cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+h1{font-size:clamp(2.8rem,9vw,6.4rem);font-weight:800;letter-spacing:-.04em}
+#role{font:700 clamp(1.3rem,3vw,2rem) var(--display);margin:18px 0 14px;color:var(--accent);min-height:1.3em}
+.lead{max-width:56ch;color:var(--mute);font-size:1.15rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;padding:0;list-style:none}
+.facts li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 16px;font-size:.92rem;color:var(--mute)}
+/* about */
+.grid2{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+@media(max-width:800px){.grid2{grid-template-columns:1fr;gap:24px}}
+.about p+p{margin-top:16px}
+.about p{color:var(--mute)}
+.lang{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.lang span{background:var(--soft);padding:5px 14px;border-radius:8px;font-weight:600;font-size:.9rem}
+/* skills */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 22px}
+.tabs button{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 18px;border-radius:999px;font:500 .95rem var(--body);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.sk{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.sk b{display:block;font-family:var(--display);font-size:1.05rem}
+.sk span{font-size:.88rem;color:var(--mute)}
+.sk[hidden]{display:none}
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-align:left;cursor:pointer;padding:0;color:inherit;font:inherit;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.thumb{aspect-ratio:16/10;background:var(--soft);display:grid;place-items:center;position:relative;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .ph{font:800 2.6rem var(--display);color:var(--accent);opacity:.55}
+.thumb::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 14px,color-mix(in srgb,var(--accent) 10%,transparent) 14px 16px);pointer-events:none}
+.thumb img+.ph,.thumb:has(img)::after{display:none}
+.cb{padding:18px 20px 22px}
+.cb h3{font-size:1.3rem;margin-bottom:6px}
+.cb p{color:var(--mute);font-size:.96rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tags span{font-size:.8rem;font-weight:600;background:var(--soft);padding:3px 11px;border-radius:6px}
+.slot{border:2px dashed var(--line);background:none;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;min-height:260px;padding:20px;text-align:center;color:var(--mute)}
+.slot:hover{border-color:var(--accent);transform:none}
+dialog{border:0;border-radius:20px;padding:0;max-width:640px;width:calc(100% - 32px);background:var(--surface);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(8,12,24,.6)}
+dialog .thumb{aspect-ratio:16/9}
+.dbody{padding:24px 28px 28px}
+.dbody h3{font-size:1.7rem;margin-bottom:10px}
+.dbody p{color:var(--mute)}
+.dact{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+/* timeline */
+.tl{list-style:none;margin:30px 0 0;padding:0 0 0 26px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 34px}
+.tl li::before{content:"";position:absolute;left:-34px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl time{font-size:.88rem;color:var(--mute);font-weight:600}
+.tl h3{font-size:1.25rem;margin:2px 0 4px}
+.tl p{color:var(--mute);max-width:60ch}
+/* contact */
+#contact{background:var(--ink);color:var(--bg)}
+#contact h2{font-size:clamp(2.2rem,6vw,4.2rem)}
+#contact p.lead{color:color-mix(in srgb,var(--bg) 72%,transparent);margin-top:14px}
+.cl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:36px}
+.cl a{display:block;border:1px solid color-mix(in srgb,var(--bg) 28%,transparent);border-radius:14px;padding:16px 18px;text-decoration:none;transition:background .2s;overflow-wrap:anywhere}
+.cl a:hover{background:color-mix(in srgb,var(--bg) 12%,transparent)}
+.cl small{display:block;opacity:.65;font-size:.82rem}
+.cl b{font-weight:600}
+form{display:grid;gap:12px;margin-top:36px;max-width:560px}
+input,textarea{font:inherit;padding:13px 16px;border-radius:12px;border:1px solid color-mix(in srgb,var(--bg) 30%,transparent);background:color-mix(in srgb,var(--bg) 8%,transparent);color:var(--bg)}
+input::placeholder,textarea::placeholder{color:color-mix(in srgb,var(--bg) 55%,transparent)}
+footer{padding:22px 0;font-size:.88rem;color:var(--mute);text-align:center}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav id="nav" aria-label="Main">
+<a class="logo" href="#hero">mohamed<i>.</i>hamdi</a>
+<a class="l" href="#about">About</a><a class="l" href="#skills">Skills</a><a class="l" href="#work">Work</a><a class="l" href="#path">Journey</a><a class="l" href="#contact">Contact</a>
+<button class="ib" id="theme" aria-label="Toggle light and dark theme">◐</button>
+<button class="ib" id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+</nav></div></header>
+
+<main>
+<section id="hero"><div class="wrap">
+<div class="switch" role="group" aria-label="View my work as">
+<button id="m-dev" aria-pressed="true">Developer</button><button id="m-des" aria-pressed="false">Designer</button></div>
+<h1>Mohamed<br>Hamdi</h1>
+<div id="role" aria-live="polite"></div>
+<p class="lead" id="lead"></p>
+<div class="cta"><a class="btn p" href="#work">See my work</a><a class="btn" href="#contact">Get in touch</a></div>
+<ul class="facts"><li>3rd-year engineering student at ESPRIT</li><li>Freelance designer since Oct 2023</li><li>Ariana, Tunisia</li></ul>
+</div></section>
+
+<section id="about"><div class="wrap grid2">
+<h2>One person, two crafts.</h2>
+<div class="about">
+<p>I’m a software engineering student who also runs an e-commerce business and works part time as a freelance graphic designer, creating posters, badges, cards and logos.</p>
+<p>Throughout my university journey I’ve built several desktop and web applications, and I’ve learned to use AI tools to work faster and prototype better. Designing interfaces and writing the code behind them is the part I enjoy most.</p>
+<div class="lang" aria-label="Languages"><span>Arabic</span><span>English</span><span>French</span></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<h2>What I work with</h2>
+<div class="tabs" role="group" aria-label="Filter skills">
+<button data-f="all" aria-pressed="true">All</button><button data-f="dev" aria-pressed="false">Development</button><button data-f="des" aria-pressed="false">Design</button><button data-f="biz" aria-pressed="false">Professional</button></div>
+<div class="skills" id="skillgrid"></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+<h2>Selected work</h2>
+<p class="lead" style="margin-top:12px">Click a project to see details. Filter by the kind of work you care about.</p>
+<div class="tabs" id="pf" role="group" aria-label="Filter projects">
+<button data-f="all" aria-pressed="true">All</button><button data-f="dev" aria-pressed="false">Software</button><button data-f="des" aria-pressed="false">Design</button></div>
+<div class="projects" id="projects"></div>
+</div></section>
+
+<section id="path"><div class="wrap grid2">
+<div><h2>Journey</h2><p style="color:var(--mute);margin-top:12px">Where I’ve studied and worked so far.</p></div>
+<ol class="tl">
+<li><time>Oct 2023 – Present</time><h3>Freelance graphic designer</h3><p>Online freelance work creating posters, badges, cards and logos for clients, using Photoshop, Illustrator, Premiere Pro and After Effects.</p></li>
+<li><time>Internship</time><h3>ASTEELFLASH</h3><p>First-grade internship.</p></li>
+<li><time>Current</time><h3>ESPRIT School of Engineering</h3><p>Third-year student in software engineering (first engineering cycle).</p></li>
+<li><time>2022 – 2023</time><h3>ISIM</h3><p>One year of a computer science licence.</p></li>
+</ol></div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Let’s build something together.</h2>
+<p class="lead">I’m open to internships and junior roles. The quickest way to reach me is a short email.</p>
+<div class="cl">
+<a href="mailto:mh8180038@gmail.com"><small>Email</small><b>mh8180038@gmail.com</b></a>
+<a href="tel:+21650495916"><small>Phone</small><b>+216 50 495 916</b></a>
+<a href="https://www.linkedin.com/in/mohamed-hamdi-204956294/" target="_blank" rel="noopener"><small>LinkedIn</small><b>mohamed-hamdi</b></a>
+<a href="https://www.behance.net/" target="_blank" rel="noopener" id="behance"><small>Behance</small><b>mohamed hamdi</b></a>
+</div>
+<form id="form"><input id="fn" placeholder="Your name" required aria-label="Your name"><input id="fe" type="email" placeholder="Your email" required aria-label="Your email"><textarea id="fm" rows="4" placeholder="Your message" required aria-label="Your message"></textarea>
+<button class="btn p" type="submit">Send message</button></form>
+</div></section>
+</main>
+<footer>© <span id="yr"></span> Mohamed Hamdi</footer>
+
+<dialog id="dlg" aria-labelledby="dt"><div class="thumb" id="dimg"></div><div class="dbody"><h3 id="dt"></h3><p id="dd"></p><div class="tags" id="dtags"></div><div class="dact" id="dact"></div></div></dialog>
+
+<script>
+/* ===== EDIT HERE =====
+   Add your projects: set img to a path like "img/project1.jpg" (or leave "" for a placeholder),
+   link to the live demo or Behance page, and fill in the description. */
+var PROJECTS=[
+{t:"Desktop application",k:"dev",d:"A desktop application built during my engineering studies. Add what it does, who it is for and your role.",tags:["Java","C++"],img:"",link:""},
+{t:"Web application",k:"dev",d:"A web application built with Symfony and HTML5. Add the problem it solves, features and screenshots.",tags:["Symfony","HTML5"],img:"",link:""},
+{t:"Brand and logo work",k:"des",d:"Posters, badges, cards and logos created for freelance clients. Add your best pieces here.",tags:["Illustrator","Photoshop"],img:"",link:""},
+{t:"Motion and video",k:"des",d:"Video editing and motion graphics. Add a showreel link or short clips.",tags:["Premiere Pro","After Effects"],img:"",link:""}
+];
+var SKILLS=[
+["Java","Software development","dev"],["C++","Software development","dev"],["Python","Software development","dev"],["Web development","Symfony, HTML5","dev"],
+["Adobe Photoshop","Image editing","des"],["Adobe Illustrator","Logos and vector art","des"],["Adobe Premiere Pro","Video editing","des"],["Adobe After Effects","Motion graphics","des"],["Graphic design","Posters, badges, cards","des"],
+["Prompt engineering","Working with AI tools","biz"],["Digital marketing","E-commerce experience","biz"],["Presentations","Creation and management of documents","biz"],["Teamwork","Skills management, flexibility, creativity","biz"]];
+var MODES={dev:{r:["Software engineering student","Java, C++ and Symfony builder","Web and desktop app developer"],l:"I build desktop and web applications, and I care about how they look as much as how they run."},
+des:{r:["Freelance graphic designer","Logos, posters and brand visuals","Photoshop, Illustrator and motion"],l:"I design posters, badges, cards and logos, and I bring the same eye to the interfaces I code."}};
+var $=function(s){return document.querySelector(s)},root=document.documentElement,mode="dev",timer;
+function type(){clearTimeout(timer);var arr=MODES[mode].r,i=0,j=0,del=false,el=$("#role");
+if(matchMedia("(prefers-reduced-motion:reduce)").matches){el.textContent=arr[0];return}
+(function tick(){var w=arr[i];el.textContent=w.slice(0,j)+"▍";
+if(!del&&j===w.length){del=true;timer=setTimeout(tick,1600);return}
+if(del&&j===0){del=false;i=(i+1)%arr.length}
+j+=del?-1:1;timer=setTimeout(tick,del?28:55)})()}
+function setMode(m){mode=m;root.dataset.mode=m==="des"?"design":"code";
+$("#m-dev").setAttribute("aria-pressed",m==="dev");$("#m-des").setAttribute("aria-pressed",m==="des");
+$("#lead").textContent=MODES[m].l;type();filterProjects(m==="des"?"des":"dev",true)}
+$("#m-dev").onclick=function(){setMode("dev")};$("#m-des").onclick=function(){setMode("des")};
+/* skills */
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+$("#skillgrid").innerHTML=SKILLS.map(function(s){return'<div class="sk" data-k="'+s[2]+'"><b>'+esc(s[0])+'</b><span>'+esc(s[1])+'</span></div>'}).join("");
+function pressGroup(box,f){box.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.f===f)})}
+document.querySelector("#skills .tabs").onclick=function(e){var f=e.target.dataset.f;if(!f)return;pressGroup(this,f);
+document.querySelectorAll(".sk").forEach(function(c){c.hidden=f!=="all"&&c.dataset.k!==f})};
+/* projects */
+function filterProjects(f,sync){pressGroup($("#pf"),f);
+var list=PROJECTS.filter(function(p){return f==="all"||p.k===f});
+$("#projects").innerHTML=list.map(function(p){var i=PROJECTS.indexOf(p);
+return'<button class="card" data-i="'+i+'"><div class="thumb">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.t)+'">':'<span class="ph">'+esc(p.t.charAt(0))+'</span>')+'</div><div class="cb"><h3>'+esc(p.t)+'</h3><p>'+esc(p.d.split(".")[0])+'.</p><div class="tags">'+p.tags.map(function(t){return"<span>"+esc(t)+"</span>"}).join("")+'</div></div></button>'}).join("")
++'<div class="card slot" aria-hidden="true"><b>More coming soon</b><span>Your next project goes here</span></div>'}
+$("#pf").onclick=function(e){if(e.target.dataset.f)filterProjects(e.target.dataset.f)};
+var dlg=$("#dlg");
+$("#projects").onclick=function(e){var c=e.target.closest(".card[data-i]");if(!c)return;var p=PROJECTS[c.dataset.i];
+$("#dimg").innerHTML=p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.t)+'">':'<span class="ph">'+esc(p.t.charAt(0))+'</span>';
+$("#dt").textContent=p.t;$("#dd").textContent=p.d;
+$("#dtags").innerHTML=p.tags.map(function(t){return"<span>"+esc(t)+"</span>"}).join("");
+$("#dact").innerHTML=(p.link?'<a class="btn p" target="_blank" rel="noopener" href="'+esc(p.link)+'">View project</a>':"")+'<button class="btn" id="close">Close</button>';
+$("#close").onclick=function(){dlg.close()};dlg.showModal()};
+dlg.onclick=function(e){if(e.target===dlg)dlg.close()};
+/* nav */
+$("#menu").onclick=function(){var o=$("#nav").classList.toggle("open");this.setAttribute("aria-expanded",o)};
+document.querySelectorAll("nav a.l").forEach(function(a){a.addEventListener("click",function(){$("#nav").classList.remove("open")})});
+var links=document.querySelectorAll("nav a.l");
+if("IntersectionObserver"in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})})},{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section").forEach(function(s){io.observe(s)})}
+/* theme */
+$("#theme").onclick=function(){var dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;root.dataset.theme=dark?"light":"dark"};
+/* contact form opens the visitor's email app */
+$("#form").onsubmit=function(e){e.preventDefault();
+location.href="mailto:mh8180038@gmail.com?subject="+encodeURIComponent("Portfolio message from "+$("#fn").value)+"&body="+encodeURIComponent($("#fm").value+"\n\n"+$("#fn").value+" ("+$("#fe").value+")")};
+$("#yr").textContent=new Date().getFullYear();
+setMode("dev");
+</script>
+</body>
+</html>
