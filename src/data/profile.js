@@ -13,12 +13,13 @@ export const PROFILE = {
   githubHandle: "mohamed-hamdi-esprit",
   quickFacts: [
     "Software Engineering Student at ESPRIT",
-    "Freelance Designer & Brand Creator since Oct 2023",
+    "Freelance in E-Commerce (2025 – Present, Ongoing)",
+    "Freelance Graphic Designer (Oct 2023 – 2025)",
     "Based in Ariana, Tunisia",
     "Fluent in Arabic, English & French"
   ],
   bio: [
-    "I'm a software engineering student at ESPRIT who also runs an e-commerce business and works part-time as a freelance graphic designer creating posters, visual identities, badges, and brand assets.",
+    "I'm a software engineering student at ESPRIT who freelances in e-commerce (2025 to date and ongoing) after running a freelance graphic design journey from Oct 2023 to 2025 creating posters, visual identities, badges, and brand assets for ~20 client deliverables.",
     "Throughout my engineering journey I've developed full-stack and distributed applications utilizing Spring Boot, Angular, Symfony, and Python, alongside system observability platforms. Designing polished, intuitive interfaces and writing solid, maintainable code is where I thrive."
   ],
   languages: [
