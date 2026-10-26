@@ -6,14 +6,15 @@ export const EXPERIENCES = [
   {
     period: "2025 – Present",
     type: "Freelance",
-    role: "Freelance E-Commerce Specialist & Store Operations",
-    organization: "Independent Contractor",
-    location: "Tunisia (Remote)",
-    description: "Freelancing in e-commerce from 2025 to date and still active. Managing online store operations, digital product listings, customer acquisition, conversion optimization, and marketing analytics.",
+    role: "Founder & E-Commerce Operations",
+    organization: "Ledded (Lighting & Modern LED Brand)",
+    organizationUrl: "https://www.facebook.com/profile.php?id=61577955154192",
+    location: "Tunisia (Online Store)",
+    description: "Founded and actively scaling Ledded from 2025 to date. Managing end-to-end direct-to-consumer store operations, social commerce, targeted product marketing, and fulfillment for over 1,400 community followers.",
     highlights: [
-      "Operating end-to-end e-commerce sales channels, digital marketing, and fulfillment workflows",
-      "Analyzing consumer conversion metrics and driving organic & targeted online growth",
-      "Active e-commerce operations managed alongside software engineering coursework at ESPRIT"
+      "Built and scaling direct-to-consumer brand Ledded with 1,400+ social community followers",
+      "Managing product catalog, digital advertising campaigns, customer acquisition, and fulfillment",
+      "Analyzing sales funnel metrics and leveraging automation to optimize fulfillment and repeat sales"
     ]
   },
   {

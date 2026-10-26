@@ -37,7 +37,16 @@ import { EXPERIENCES } from '../data/experience.js';
                   <span class="timeline-type">{exp.type}</span>
                 </div>
                 <h3 class="timeline-role">{exp.role}</h3>
-                <h4 class="timeline-org">{exp.organization} &bull; <span class="timeline-loc">{exp.location}</span></h4>
+                <h4 class="timeline-org">
+                  {exp.organizationUrl ? (
+                    <a href={exp.organizationUrl} target="_blank" rel="noopener noreferrer" class="timeline-org-link">
+                      <span>{exp.organization}</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V8H8"></path></svg>
+                    </a>
+                  ) : (
+                    exp.organization
+                  )} &bull; <span class="timeline-loc">{exp.location}</span>
+                </h4>
                 <p class="timeline-desc">{exp.description}</p>
                 {exp.highlights && (
                   <ul class="timeline-highlights">
@@ -159,6 +168,20 @@ import { EXPERIENCES } from '../data/experience.js';
     font-weight: 600;
     color: var(--ink-secondary);
     margin-bottom: 0.85rem;
+  }
+
+  .timeline-org-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity var(--duration-fast);
+  }
+
+  .timeline-org-link:hover {
+    opacity: 0.8;
   }
 
   .timeline-loc {

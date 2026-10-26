@@ -11,6 +11,12 @@ export const PROFILE = {
   behanceHandle: "mohamed hamdi",
   github: "https://github.com/mohamed-hamdi-esprit",
   githubHandle: "mohamed-hamdi-esprit",
+  ecomBrand: {
+    name: "Ledded",
+    subtitle: "Lighting & Modern LED Brand",
+    url: "https://www.facebook.com/profile.php?id=61577955154192",
+    handle: "Ledded (1.4K+ Followers)"
+  },
   quickFacts: [
     "Software Engineering Student at ESPRIT",
     "Freelance in E-Commerce (2025 – Present, Ongoing)",
