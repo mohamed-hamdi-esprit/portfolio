@@ -1,4 +1,6 @@
 ================================================================================
+This Portfolio Website Was Assisted By LLM's And Personal Knowledge
+================================================================================
 MOHAMED HAMDI — PROFESSIONAL PORTFOLIO
 Software Engineering Student at ESPRIT & Freelance Graphic Designer
 ================================================================================
@@ -107,7 +109,9 @@ portfolio/
 │
 ├── public/                        # Static assets served as-is at root URL
 │   ├── images/                    # Project pictures & mockups
-│   │   ├── monitoring-system.jpg  # Python, Grafana, Graylog, Rsyslog dashboard
+│   │   ├── grafana-dashboard.png  # Real AsteelFlash Grafana telemetry panel
+│   │   ├── live-log-dashboard.png # Real Python live log & prediction system
+│   │   ├── monitoring-system.png  # Primary monitoring system preview
 │   │   ├── desktop-app.jpg        # CodeAnalytics Java & C++ suite
 │   │   ├── webapp.jpg             # Zenith Symfony & Angular hub
 │   │   ├── branding.jpg           # Aurora brand identity & posters

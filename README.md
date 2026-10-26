@@ -2,7 +2,10 @@
 
 > A modern, component-driven portfolio engineered with **Astro**, **Vanilla CSS Design Tokens**, and **modular JavaScript controllers**. Built to showcase software engineering projects, system architecture, graphic design, and brand identity work.
 
-![Portfolio Preview](./public/images/monitoring-system.jpg)
+<div align="center">
+  <img src="./public/images/grafana-dashboard.png" alt="AsteelFlash Grafana Telemetry Dashboard" width="48%" />
+  <img src="./public/images/live-log-dashboard.png" alt="Python Live Log Dashboard & Predictive Analytics" width="48%" />
+</div>
 
 ---
 
@@ -35,8 +38,10 @@ portfolio/
 │   └── images/                    # Copied project images
 │
 ├── public/                        # Static assets served as-is at root URL
-│   ├── images/                    # High-resolution project pictures & mockups
-│   │   ├── monitoring-system.jpg  # Python, Grafana, Graylog, Rsyslog dashboard
+│   ├── images/                    # Real project pictures & mockups
+│   │   ├── grafana-dashboard.png  # Real AsteelFlash Grafana telemetry panel
+│   │   ├── live-log-dashboard.png # Real Python live log & prediction system
+│   │   ├── monitoring-system.png  # Primary monitoring system preview
 │   │   ├── desktop-app.jpg        # CodeAnalytics Java & C++ suite
 │   │   ├── webapp.jpg             # Zenith Symfony & Angular hub
 │   │   ├── branding.jpg           # Aurora brand identity & posters

@@ -9,19 +9,20 @@
 export const PROJECTS = [
   {
     id: "monitoring-telemetry-system",
-    title: "Centralized Monitoring & Log Observability System",
+    title: "System Telemetry & Predictive Log Monitoring",
     category: "dev",
     categoryLabel: "Observability & DevOps",
-    summary: "High-throughput log aggregation, real-time metric visualization, and system alerting platform engineered with Python, Grafana, Graylog, and Rsyslog.",
-    description: "An end-to-end infrastructure monitoring and centralized logging platform designed for high-availability environments. Rsyslog collects and forwards distributed system and network event streams to Graylog for indexing, filtering, and real-time alert triggers. Comprehensive Grafana dashboards visualize server telemetry, API latencies, and traffic rates, supplemented by Python automation scripts.",
-    tags: ["Python", "Grafana", "Graylog", "Rsyslog", "Linux", "DevOps"],
-    image: "/images/monitoring-system.jpg",
+    summary: "Production monitoring infrastructure featuring live Grafana system gauges and a custom Python predictive log analyzer built with Graylog and Rsyslog.",
+    description: "An end-to-end telemetry and log observability system deployed for infrastructure monitoring at AsteelFlash. Combines a Grafana dashboard monitoring memory, CPU, disk, and bidirectional network throughput with a custom Python terminal tool that watches structured system logs in real time, classifies event severities (over 270k+ entries), and predicts upcoming failure events with automated alerting.",
+    tags: ["Grafana", "Python", "Graylog", "Rsyslog", "Linux", "GNS3"],
+    image: "/images/monitoring-system.png",
     link: "https://github.com/mohamedhamdi",
     features: [
-      "Configured high-throughput Rsyslog pipelines forward distributed system, service, and network logs",
-      "Centralized log parsing, stream rule classification, and threat/error detection in Graylog",
-      "Dynamic Grafana observability dashboards tracking server health, CPU/memory usage, and throughput",
-      "Custom Python automation scripts for data telemetry, automated health checks, and metrics processing"
+      "Real-time Grafana telemetry dashboard tracking memory usage, disk utilization, idle CPU, and network download/upload metrics",
+      "Custom Python Live Log Dashboard & Prediction engine analyzing /var/log/structured.log in real time",
+      "Dynamic severity breakdown categorization across info, warning, error, notice, and debug levels (274k+ entries)",
+      "Predictive event anomaly detection estimating upcoming error probabilities and overdue failure intervals",
+      "Rsyslog & Graylog log forwarding pipeline across distributed Linux and network nodes"
     ]
   },
   {
