@@ -16,7 +16,7 @@ export const PROJECTS = [
     description: "An end-to-end telemetry and log observability system deployed for infrastructure monitoring at AsteelFlash. Combines a Grafana dashboard monitoring memory, CPU, disk, and bidirectional network throughput with a custom Python terminal tool that watches structured system logs in real time, classifies event severities (over 270k+ entries), and predicts upcoming failure events with automated alerting.",
     tags: ["Grafana", "Python", "Graylog", "Rsyslog", "Linux", "GNS3"],
     image: "/images/monitoring-system.png",
-    link: "https://github.com/mohamedhamdi",
+    link: "", // Private / Internal project; leave empty to hide repo button
     features: [
       "Real-time Grafana telemetry dashboard tracking memory usage, disk utilization, idle CPU, and network download/upload metrics",
       "Custom Python Live Log Dashboard & Prediction engine analyzing /var/log/structured.log in real time",
@@ -26,67 +26,67 @@ export const PROJECTS = [
     ]
   },
   {
-    id: "desktop-app-analytics",
-    title: "CodeAnalytics Desktop Suite",
+    id: "autoloc-rental-platform",
+    title: "AutoLoc — Vehicle Rental Platform",
     category: "dev",
-    categoryLabel: "Software Engineering",
-    summary: "High-performance desktop system built for system telemetry, code execution metrics, and real-time database monitoring.",
-    description: "A robust desktop management and telemetry application developed during engineering studies at ESPRIT. Implements an event-driven architecture with low-latency data streams, active connection monitoring, and query performance visualization.",
-    tags: ["Java", "C++", "Spring Boot", "SQLite", "Data Structures"],
+    categoryLabel: "Enterprise Software & Spring Boot",
+    summary: "Robust multi-agency vehicle rental management platform engineered with Spring Boot, Java, and MySQL.",
+    description: "Plateforme robuste développée avec Spring Boot pour la gestion centralisée et multi-agences de location de véhicules. Permet aux clients de rechercher, réserver et gérer leurs locations tout en offrant aux agents d'agence un tableau de bord complet pour la gestion de flotte et des réservations.",
+    tags: ["Spring Boot", "Java", "MySQL", "REST API", "MVC Architecture"],
     image: "/images/desktop-app.jpg",
-    link: "https://github.com/mohamedhamdi",
+    link: "https://github.com/mohamed-hamdi-esprit/AutoLoc",
     features: [
-      "Real-time resource and API performance visualization with responsive graphs",
-      "Multi-threaded background workers for non-blocking UI interactions",
-      "Modular MVC architecture separating UI rendering from data persistence"
+      "Centralized multi-agency vehicle fleet inventory, tracking, and reservation workflows",
+      "Role-based permission architecture distinguishing clients from agency managers",
+      "Spring Boot backend services with relational schema mapping and data integrity validations"
     ]
   },
   {
-    id: "zenith-fullstack-hub",
-    title: "Zenith Commerce & Admin Hub",
+    id: "fullstack-web-application",
+    title: "Full-Stack Web Management Platform",
     category: "dev",
-    categoryLabel: "Full-Stack Web App",
-    summary: "Full-stack web management platform built with Symfony, Angular & Spring Boot architectures, featuring order pipelines and RBAC.",
-    description: "An end-to-end enterprise web application combining a responsive frontend with structured backend services. Designed for e-commerce workflow automation, inventory tracking, analytics dashboards, and secure transaction handling.",
-    tags: ["Angular", "Spring Boot", "Symfony", "PHP", "MySQL", "REST API"],
+    categoryLabel: "Web Engineering & Symfony",
+    summary: "Full-stack web application built with Symfony, HTML5 & CSS3, featuring secure authentication and database persistence.",
+    description: "Web application developed during software engineering coursework at ESPRIT. Implements clean MVC architecture with Symfony, Twig templates, relational database modeling, and secure form validation.",
+    tags: ["Symfony", "PHP", "Angular", "HTML5", "CSS3", "MySQL"],
     image: "/images/webapp.jpg",
-    link: "https://github.com/mohamedhamdi",
+    link: "", // Set to your GitHub repo link once uploaded
     features: [
-      "Robust RESTful API endpoints for catalog synchronization and order lifecycle",
-      "Dynamic dashboard featuring sales trends, inventory indicators, and customer segments",
-      "Secure authentication, CSRF protection, and role-based permissions"
+      "Structured MVC backend architecture utilizing Symfony framework components",
+      "Dynamic data queries and relational persistence layer with Doctrine ORM",
+      "Responsive frontend interface tailored for cross-device usability"
     ]
   },
   {
     id: "aurora-brand-identity",
-    title: "Aurora Brand & Visual Identity",
+    title: "Brand Identity, Badges & Poster Design",
     category: "des",
     categoryLabel: "Brand & Graphic Design",
-    summary: "Complete visual identity system, geometric poster series, and emblem badges created for client brand storytelling.",
-    description: "Comprehensive branding project delivered for commercial clients as part of freelance graphic design work. Covers custom vector logo design, modular typography hierarchies, packaging guidelines, and custom promotional posters.",
+    summary: "Complete visual identity systems, promotional posters, event badges, and brand assets created for freelance clients.",
+    description: "Comprehensive branding and vector graphic design work delivered for commercial and freelance clients. Covers custom vector logo marks, typography pairings, event posters, and digital promotional collateral.",
     tags: ["Illustrator", "Photoshop", "Branding", "Vector Art", "Typography"],
     image: "/images/branding.jpg",
     link: "https://www.behance.net/",
     features: [
-      "Cohesive brand system including logo marks, badges, and color tokens",
-      "Set of high-impact geometric posters for digital campaigns and print collateral",
-      "Production-ready vector assets optimized for screen, print, and merchandise"
+      "Vector logos and badge emblems designed in Adobe Illustrator",
+      "Editorial and event posters produced with Photoshop & advanced layout principles",
+      "Print-ready assets prepared for commercial merchandise and digital publishing"
     ]
   },
   {
     id: "lumina-motion-showreel",
-    title: "Lumina Motion & Cinematic Sequences",
+    title: "Motion Graphics & Video Editing",
     category: "des",
-    categoryLabel: "Motion & Video Editing",
-    summary: "Dynamic motion graphics, kinetic typography, and video editing sequences crafted with After Effects and Premiere Pro.",
-    description: "Showcase of motion design work for promotional clips, title sequences, and social media campaigns. Combines kinetic typography, beat-synced transitions, audio design, and custom color grading to produce engaging visual experiences.",
-    tags: ["Premiere Pro", "After Effects", "Motion Design", "Color Grading", "Sound FX"],
+    categoryLabel: "Motion & Video Production",
+    summary: "Dynamic video editing, kinetic typography, and motion graphic sequences created with Premiere Pro and After Effects.",
+    description: "Collection of video editing and motion design projects created for online promotions, social channels, and client reels. Combines rhythmic timeline cuts, color grading, and dynamic title motion.",
+    tags: ["Premiere Pro", "After Effects", "Motion Design", "Color Grading", "Video Editing"],
     image: "/images/motion-video.jpg",
     link: "https://www.behance.net/",
     features: [
-      "Multi-track timeline editing with smooth rhythmic pacing and sound synchronization",
-      "Dynamic typography and UI animations for product teasers",
-      "Optimized export pipelines for digital displays and multi-platform distribution"
+      "Multi-track timeline editing with beat synchronization in Premiere Pro",
+      "Kinetic typography sequences and animated titles in After Effects",
+      "Color grading and multi-platform format encoding"
     ]
   }
 ];

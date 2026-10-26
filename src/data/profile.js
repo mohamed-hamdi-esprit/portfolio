@@ -9,8 +9,8 @@ export const PROFILE = {
   linkedinHandle: "mohamed-hamdi",
   behance: "https://www.behance.net/",
   behanceHandle: "mohamed hamdi",
-  github: "https://github.com/",
-  githubHandle: "mohamedhamdi",
+  github: "https://github.com/mohamed-hamdi-esprit",
+  githubHandle: "mohamed-hamdi-esprit",
   quickFacts: [
     "Software Engineering Student at ESPRIT",
     "Freelance Designer & Brand Creator since Oct 2023",

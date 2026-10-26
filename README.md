@@ -109,7 +109,7 @@ Adding a project requires **zero markup editing**:
      description: "In-depth overview displayed inside the interactive modal.",
      tags: ["Python", "Grafana", "Graylog", "Rsyslog"],
      image: "/images/your-project-name.jpg",
-     link: "https://github.com/mohamedhamdi/your-repo",
+     link: "https://github.com/mohamed-hamdi-esprit/your-repo",
      features: [
        "Key architectural highlight or benchmark",
        "Database or concurrency optimization",
@@ -162,4 +162,4 @@ This project compiles to static HTML/CSS/JS in `./dist/` and deploys easily to a
 - **Email**: [mh8180038@gmail.com](mailto:mh8180038@gmail.com)  
 - **LinkedIn**: [mohamed-hamdi](https://www.linkedin.com/in/mohamed-hamdi-204956294/)  
 - **Behance**: [mohamed hamdi](https://www.behance.net/)  
-- **GitHub**: [mohamedhamdi](https://github.com/mohamedhamdi)  
+- **GitHub**: [mohamed-hamdi-esprit](https://github.com/mohamed-hamdi-esprit)  

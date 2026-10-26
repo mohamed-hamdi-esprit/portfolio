@@ -198,7 +198,7 @@ Step 2: Open `src/data/projects.js` and append an entry:
     description: "Detailed overview shown inside the pop-up modal.",
     tags: ["Spring Boot", "Angular", "MySQL"],
     image: "/images/my-new-project.jpg",
-    link: "https://github.com/mohamedhamdi/your-repo",
+    link: "https://github.com/mohamed-hamdi-esprit/your-repo",
     features: [
       "Key highlight point #1",
       "Key highlight point #2",
@@ -264,7 +264,7 @@ Mohamed Hamdi
 - Phone:       +216 50 495 916
 - LinkedIn:    https://www.linkedin.com/in/mohamed-hamdi-204956294/
 - Behance:     https://www.behance.net/
-- GitHub:      https://github.com/mohamedhamdi
+- GitHub:      https://github.com/mohamed-hamdi-esprit
 
 ================================================================================
 Generated for Mohamed Hamdi's Portfolio Repository.
