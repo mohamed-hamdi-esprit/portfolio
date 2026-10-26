@@ -7,14 +7,15 @@ export const EXPERIENCES = [
     period: "2025 – Present",
     type: "Freelance",
     role: "Founder & E-Commerce Operations",
-    organization: "Ledded (Lighting & Modern LED Brand)",
+    organization: "Ledded & Personal E-Commerce Brands",
     organizationUrl: "https://www.facebook.com/profile.php?id=61577955154192",
-    location: "Tunisia (Online Store)",
-    description: "Founded and actively scaling Ledded from 2025 to date. Managing end-to-end direct-to-consumer store operations, social commerce, targeted product marketing, and fulfillment for over 1,400 community followers.",
+    location: "Tunisia (Online Stores & Operations)",
+    description: "Founded and actively scaling Ledded alongside multiple personal e-commerce brands (both past ventures and ongoing stores), generating over 900+ successful sales to date. Managing end-to-end direct-to-consumer store operations, social commerce, targeted product marketing, and fulfillment logistics.",
     highlights: [
-      "Built and scaling direct-to-consumer brand Ledded with 1,400+ social community followers",
-      "Managing product catalog, digital advertising campaigns, customer acquisition, and fulfillment",
-      "Analyzing sales funnel metrics and leveraging automation to optimize fulfillment and repeat sales"
+      "Generated over 900+ sales across personal e-commerce brands, driving customer acquisition and order fulfillment",
+      "Founded and actively scaling Ledded (modern LED & lighting) with 1,400+ social community followers alongside other brand ventures",
+      "Managing product sourcing, targeted advertising campaigns, conversion rate optimization (CRO), and customer satisfaction",
+      "Analyzing sales funnel performance and leveraging automation to streamline fulfillment and repeat purchases"
     ]
   },
   {

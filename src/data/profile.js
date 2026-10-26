@@ -15,17 +15,17 @@ export const PROFILE = {
     name: "Ledded",
     subtitle: "Lighting & Modern LED Brand",
     url: "https://www.facebook.com/profile.php?id=61577955154192",
-    handle: "Ledded (1.4K+ Followers)"
+    handle: "Ledded (1.4K+ Followers · 900+ Sales)"
   },
   quickFacts: [
     "Software Engineering Student at ESPRIT",
-    "Freelance in E-Commerce (2025 – Present, Ongoing)",
+    "E-Commerce Brands Founder (900+ Sales Generated)",
     "Freelance Graphic Designer (Oct 2023 – 2025)",
     "Based in Ariana, Tunisia",
     "Fluent in Arabic, English & French"
   ],
   bio: [
-    "I'm a software engineering student at ESPRIT who freelances in e-commerce (2025 to date and ongoing) after running a freelance graphic design journey from Oct 2023 to 2025 creating posters, visual identities, badges, and brand assets for ~20 client deliverables.",
+    "I'm a software engineering student at ESPRIT who builds and runs personal e-commerce brands (including Ledded and other stores, with 900+ sales generated to date), having previously delivered ~20 client design packages during my freelance graphic design journey (2023–2025).",
     "Throughout my engineering journey I've developed full-stack and distributed applications utilizing Spring Boot, Angular, Symfony, and Python, alongside system observability platforms. Designing polished, intuitive interfaces and writing solid, maintainable code is where I thrive."
   ],
   languages: [
