@@ -113,8 +113,8 @@ export const PROJECTS = [
     title: "ESPR — Halloween Party Event Ticket",
     category: "des",
     categoryLabel: "Event Design & Print",
-    summary: "Spooky event ticket design for the ESPR Student Committee Halloween Trick-or-Treat Party, featuring gothic typography and Halloween illustrations.",
-    description: "Official event ticket design commissioned by the ESPR Student Committee for their annual Halloween Trick-or-Treat Party. The ticket features a dark gothic layout with spider-web textures, ghost illustrations, a detachable stub with pumpkin embellishment, and horror-font typography. Designed for print distribution — Regular Release batch.",
+    summary: "Spooky event ticket design for the Esprit Student Committee Halloween Trick-or-Treat Party, featuring gothic typography and Halloween illustrations.",
+    description: "Official event ticket design commissioned by the Esprit Student Committee for their annual Halloween Trick-or-Treat Party. The ticket features a dark gothic layout with spider-web textures, ghost illustrations, a detachable stub with pumpkin embellishment, and horror-font typography. Designed for print distribution — Regular Release batch.",
     tags: ["Photoshop", "Illustrator", "Event Design", "Print", "Typography"],
     image: "/images/design/halloween-ticket.jpg",
     link: "",
@@ -122,7 +122,7 @@ export const PROJECTS = [
       "Dual-panel ticket layout with perforated stub stub section",
       "Gothic Halloween typography combining horror fonts and serif details",
       "Spider-web and ghost decorative illustration elements",
-      "Print-ready layout for physical ticket distribution (ESPR, Bloc E)"
+      "Print-ready layout for physical ticket distribution (Esprit, Bloc E)"
     ]
   },
   {
@@ -131,7 +131,7 @@ export const PROJECTS = [
     category: "des",
     categoryLabel: "Social Media & Motion Design",
     summary: "High-energy sold-out announcement graphic for the ESPR Halloween event, designed for Instagram Story format with bold brush lettering.",
-    description: "Urgent-feel social media announcement created for the ESPR Student Committee's Halloween event Blind Release sell-out. Uses aggressive brush-stroke red overlays, double-layered 'SOLD OUT' type treatment (outline + handwritten script), and a repeating caution-tape ticket strip at the centre. Designed as an Instagram Story (9:16) for maximum scroll-stopping impact.",
+    description: "Urgent-feel social media announcement created for the Esprit Student Committee's Halloween event Blind Release sell-out. Uses aggressive brush-stroke red overlays, double-layered 'SOLD OUT' type treatment (outline + handwritten script), and a repeating caution-tape ticket strip at the centre. Designed as an Instagram Story (9:16) for maximum scroll-stopping impact.",
     tags: ["Photoshop", "Social Media", "Typography", "Instagram Story", "Event Design"],
     image: "/images/design/halloween-soldout.jpg",
     link: "",
