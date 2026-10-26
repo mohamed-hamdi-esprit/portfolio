@@ -3,134 +3,369 @@ import { PROFILE } from '../data/profile.js';
 ---
 
 <section id="hero" class="hero-section">
-  <div class="hero-ambient-glow" aria-hidden="true"></div>
+  <!-- Dynamic Ambient Glow that morphs with persona -->
+  <div id="hero-glow" class="hero-ambient-glow" aria-hidden="true"></div>
+
+  <!-- Background Rising Particles Layer -->
+  <div id="hero-particles" class="hero-particles-layer" aria-hidden="true"></div>
 
   <div class="container hero-container">
-    <!-- Persona Switcher -->
-    <div class="persona-switch-wrapper">
-      <span class="persona-label">Perspective:</span>
-      <div class="persona-switch" role="group" aria-label="Toggle portfolio focus perspective">
-        <button id="mode-dev" class="persona-btn" aria-pressed="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <polyline points="16 18 22 12 16 6"></polyline>
-            <polyline points="8 6 2 12 8 18"></polyline>
-          </svg>
-          <span>Developer</span>
-        </button>
-        <button id="mode-des" class="persona-btn" aria-pressed="false">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-            <path d="M2 2l7.586 7.586"></path>
-            <circle cx="11" cy="11" r="2"></circle>
-          </svg>
-          <span>Designer</span>
-        </button>
-      </div>
-    </div>
+    <div class="hero-grid">
+      <!-- LEFT COLUMN: Identity, Persona Toggle, CTAs -->
+      <div class="hero-col-info">
+        <!-- Persona Perspective Switcher -->
+        <div class="persona-switch-wrapper">
+          <span class="persona-label">Perspective:</span>
+          <div class="persona-switch" role="group" aria-label="Toggle portfolio focus perspective">
+            <button id="mode-dev" class="persona-btn" aria-pressed="true" data-mode-target="dev">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <span>Developer</span>
+            </button>
+            <button id="mode-des" class="persona-btn" aria-pressed="false" data-mode-target="des">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+              <span>Designer</span>
+            </button>
+          </div>
+        </div>
 
-    <!-- Main Headline -->
-    <div class="hero-content">
-      <div class="badge-status">
-        <span class="status-pulse"></span>
-        <span>Available for Internships & Junior Roles</span>
-      </div>
+        <!-- Main Headline -->
+        <div class="hero-content">
+          <div class="badge-status">
+            <span class="status-pulse"></span>
+            <span>Available for Internships & Junior Roles</span>
+          </div>
 
-      <h1 class="hero-title">
-        Mohamed<br />
-        <span class="hero-surname">Hamdi</span>
-      </h1>
+          <h1 class="hero-title">
+            Mohamed<br />
+            <span class="hero-surname">Hamdi</span>
+          </h1>
 
-      <div class="hero-role-wrapper">
-        <span class="role-prefix">Focus &rsaquo;</span>
-        <div id="typewriter-role" class="typewriter-role" aria-live="polite">
-          Software Engineering Student
+          <div class="hero-role-wrapper">
+            <span class="role-prefix">Focus &rsaquo;</span>
+            <div id="typewriter-role" class="typewriter-role" aria-live="polite">
+              Software Engineering Student
+            </div>
+          </div>
+
+          <p id="hero-lead" class="lead hero-lead">
+            {PROFILE.modes.dev.lead}
+          </p>
+
+          <!-- Action CTAs -->
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">
+              <span>Explore Selected Work</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M7 17l9.2-9.2M17 17V8H8"></path>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <span>Get in Touch</span>
+            </a>
+            <a href="https://github.com/mohamed-hamdi-esprit" target="_blank" rel="noopener noreferrer" class="btn btn-sm social-pill" aria-label="GitHub Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+          <!-- Quick Facts -->
+          <ul class="quick-facts">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+              <span>Software Engineering Student at ESPRIT</span>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Freelance Designer since Oct 2023</span>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Ariana, Tunisia</span>
+            </li>
+          </ul>
         </div>
       </div>
 
-      <p id="hero-lead" class="lead hero-lead">
-        {PROFILE.modes.dev.lead}
-      </p>
+      <!-- RIGHT COLUMN: 3D Interactive Laptop Stage & Floating Physics Tokens -->
+      <div class="hero-col-stage">
+        <div id="stage-viewport" class="stage-viewport">
+          <!-- Floating Physics Badges Layer (Repelled by Cursor + Implode/Explode) -->
+          <div id="tokens-layer" class="tokens-layer" aria-hidden="true">
+            <!-- Badges dynamically injected / bound with physics -->
+          </div>
 
-      <!-- Action CTAs -->
-      <div class="hero-actions">
-        <a href="#work" class="btn btn-primary">
-          <span>Explore Selected Work</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <path d="M7 17l9.2-9.2M17 17V8H8"></path>
-          </svg>
-        </a>
-        <a href="#contact" class="btn btn-outline">
-          <span>Get in Touch</span>
-        </a>
-        <a href="https://github.com/mohamed-hamdi-esprit" target="_blank" rel="noopener noreferrer" class="btn btn-sm social-pill" aria-label="GitHub Profile">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          <span>GitHub</span>
-        </a>
+          <!-- 3D Laptop Interactive Rig -->
+          <div id="laptop-rig" class="laptop-rig" role="button" tabindex="0" aria-label="Toggle between Developer and Designer mode">
+            <!-- Ambient Stage Shadow -->
+            <div class="laptop-floor-shadow"></div>
+
+            <!-- 3D Transform Anchor for Cursor Tilt & 720deg Spin -->
+            <div id="laptop-mesh" class="laptop-mesh">
+              <!-- BASE (Bottom Keyboard Chassis) -->
+              <div class="laptop-base">
+                <div class="base-surface">
+                  <!-- Keyboard Grid -->
+                  <div class="keyboard-deck">
+                    <div class="key-row"><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span></div>
+                    <div class="key-row"><span class="k-key k-tab"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key k-ret"></span></div>
+                    <div class="key-row"><span class="k-key k-caps"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key k-enter"></span></div>
+                    <div class="key-row"><span class="k-key k-shift"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key k-shift"></span></div>
+                    <div class="key-row"><span class="k-key"></span><span class="k-key"></span><span class="k-key"></span><span class="k-key k-space"></span><span class="k-key"></span><span class="k-key"></span></div>
+                  </div>
+                  <!-- Glass Trackpad -->
+                  <div class="trackpad"></div>
+                </div>
+                <!-- Front Edge Notch & Metal Lip -->
+                <div class="base-lip">
+                  <span class="lip-notch"></span>
+                </div>
+              </div>
+
+              <!-- DISPLAY LID (Screen Chassis angled backward) -->
+              <div class="laptop-lid">
+                <div class="lid-bezel">
+                  <!-- Webcam & Sensor Dot -->
+                  <div class="lid-camera">
+                    <span class="camera-lens"></span>
+                  </div>
+
+                  <!-- ACTIVE SCREEN (Hot-swaps between IDE and Adobe Photoshop/Illustrator) -->
+                  <div class="laptop-screen-display">
+                    <!-- 1. DEVELOPER SCREEN: VS Code / IntelliJ IDE Interface -->
+                    <div id="screen-dev" class="screen-view screen-dev active">
+                      <div class="ide-titlebar">
+                        <div class="traffic-dots">
+                          <span class="dot dot-red"></span>
+                          <span class="dot dot-yellow"></span>
+                          <span class="dot dot-green"></span>
+                        </div>
+                        <div class="ide-tabs">
+                          <div class="ide-tab active">
+                            <svg class="tab-icon dev-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            <span>PortfolioEngine.java</span>
+                          </div>
+                          <div class="ide-tab">
+                            <svg class="tab-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <span>telemetry.py</span>
+                          </div>
+                        </div>
+                        <div class="ide-env-tag">SPRING BOOT · 3.2</div>
+                      </div>
+
+                      <div class="ide-body">
+                        <div class="ide-sidebar">
+                          <div class="side-icon active"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg></div>
+                          <div class="side-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                          <div class="side-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg></div>
+                        </div>
+
+                        <div class="ide-code-pane">
+                          <div class="code-lines">
+                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                          </div>
+                          <pre class="code-content"><code><span class="c-anno">@SpringBootApplication</span>
+<span class="c-kw">public class</span> <span class="c-cls">MohamedHamdi</span> &#123;
+  <span class="c-anno">@Autowired</span> <span class="c-kw">private</span> Observability <span class="c-var">telemetry</span>;
+
+  <span class="c-kw">public static void</span> <span class="c-fn">main</span>(String[] args) &#123;
+    SpringApplication.<span class="c-fn">run</span>(MohamedHamdi.<span class="c-kw">class</span>);
+    <span class="c-str">"Status: Engineering Ready"</span>;
+  &#125;
+&#125;</code></pre>
+                        </div>
+                      </div>
+
+                      <div class="ide-terminal">
+                        <div class="term-prompt">
+                          <span class="term-user">hamdi@esprit:~$</span>
+                          <span class="term-cmd">mvn clean compile && run-telemetry</span>
+                        </div>
+                        <div class="term-status">
+                          <span class="term-dot"></span>
+                          <span>BUILD SUCCESS · Graylog Port: 8080 · 0 Errors</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 2. DESIGNER SCREEN: Adobe Photoshop & Illustrator Interface -->
+                    <div id="screen-des" class="screen-view screen-des">
+                      <div class="adobe-titlebar">
+                        <div class="adobe-app-badge">Ps / Ai</div>
+                        <div class="adobe-menu">
+                          <span>File</span><span>Edit</span><span>Object</span><span>Layer</span><span>Type</span><span>Select</span><span>Filter</span><span>View</span>
+                        </div>
+                        <div class="adobe-zoom-tag">100% (RGB/8)</div>
+                      </div>
+
+                      <div class="adobe-body">
+                        <!-- Left Adobe Tool Palette -->
+                        <div class="adobe-toolbar">
+                          <div class="tool-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l7 18 3-7 7-3L3 3z"></path></svg></div>
+                          <div class="tool-btn active-pen"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg></div>
+                          <div class="tool-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg></div>
+                          <div class="tool-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 11l-8-8-8 8m16 0l-8 8-8-8"></path></svg></div>
+                          <div class="tool-btn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="6"></circle></svg></div>
+                        </div>
+
+                        <!-- Center Canvas showing Real Graphic Work -->
+                        <div class="adobe-canvas">
+                          <div class="canvas-artboard">
+                            <img src="/images/design/sissa-sissa-logo.jpg" alt="Sissa Sissa Brand Identity Artwork" class="artboard-artwork" />
+                            <!-- Vector Selection & Bezier Handles Overlay -->
+                            <div class="vector-selection-box">
+                              <span class="handle h-tl"></span>
+                              <span class="handle h-tr"></span>
+                              <span class="handle h-bl"></span>
+                              <span class="handle h-br"></span>
+                              <span class="vector-anchor" style="top: 30%; left: 45%;"></span>
+                              <span class="vector-anchor" style="top: 70%; left: 60%;"></span>
+                              <svg class="bezier-guide-svg" viewBox="0 0 100 100">
+                                <path d="M 25 35 Q 50 10 75 40 T 80 80" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="3,3" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Right Adobe Layers & Swatches Panel -->
+                        <div class="adobe-panels">
+                          <div class="panel-section">
+                            <div class="panel-header">LAYERS</div>
+                            <div class="layer-item active"><span class="layer-eye">👁️</span><span>Logo_Vector.ai</span></div>
+                            <div class="layer-item"><span class="layer-eye">👁️</span><span>Brand_Typography</span></div>
+                            <div class="layer-item"><span class="layer-eye">👁️</span><span>Glow_Effect</span></div>
+                          </div>
+                          <div class="panel-section">
+                            <div class="panel-header">SWATCHES</div>
+                            <div class="swatches-grid">
+                              <span class="swatch" style="background: #f43f5e;"></span>
+                              <span class="swatch" style="background: #ec4899;"></span>
+                              <span class="swatch" style="background: #8b5cf6;"></span>
+                              <span class="swatch" style="background: #3b82f6;"></span>
+                              <span class="swatch" style="background: #10b981;"></span>
+                              <span class="swatch" style="background: #fbbf24;"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="adobe-statusbar">
+                        <span class="art-tag">Mohamed Hamdi · Visual Identity & Vector Systems</span>
+                        <span class="art-coord">X: 1920px  Y: 1080px</span>
+                      </div>
+                    </div>
+
+                    <!-- Screen Glass Glare Reflection -->
+                    <div class="screen-glare" aria-hidden="true"></div>
+                  </div>
+                </div>
+
+                <!-- Laptop Lid Hinge -->
+                <div class="lid-hinge"></div>
+              </div>
+            </div>
+
+            <!-- Stage Interaction Hint -->
+            <div class="stage-hint">
+              <span class="hint-pulse"></span>
+              <span class="hint-text">Click laptop or switch to flip craft</span>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Quick Facts -->
-      <ul class="quick-facts">
-        <li>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-          </svg>
-          <span>Software Engineering Student at ESPRIT</span>
-        </li>
-        <li>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-          <span>Freelance Designer since Oct 2023</span>
-        </li>
-        <li>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          <span>Ariana, Tunisia</span>
-        </li>
-      </ul>
     </div>
   </div>
 </section>
 
 <style>
+  /* -------------------------------------------------------------------------
+     HERO SECTION BASE
+     ------------------------------------------------------------------------- */
   .hero-section {
-    padding: 4.5rem 0 5rem;
     position: relative;
+    padding: 3.5rem 0 5rem;
     overflow: hidden;
+    min-height: 86vh;
+    display: flex;
+    align-items: center;
   }
 
+  /* Ambient Dynamic Glow that morphs on persona switch */
   .hero-ambient-glow {
     position: absolute;
-    top: -120px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 650px;
-    height: 400px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    filter: blur(80px);
-    opacity: 0.6;
+    top: -100px;
+    right: 15%;
+    width: 750px;
+    height: 520px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 68%);
+    filter: blur(90px);
+    opacity: 0.55;
     pointer-events: none;
     z-index: 0;
-    transition: background var(--duration-slow) var(--ease-spring);
+    transition: background 1.2s var(--ease-spring), opacity 0.5s ease;
+  }
+
+  .hero-particles-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .stage-particle {
+    position: absolute;
+    bottom: -30px;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform, opacity;
   }
 
   .hero-container {
     position: relative;
     z-index: 1;
+    width: 100%;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  /* -------------------------------------------------------------------------
+     LEFT COLUMN CONTENT
+     ------------------------------------------------------------------------- */
+  .hero-col-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .persona-switch-wrapper {
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    margin-bottom: 2.25rem;
+    margin-bottom: 2rem;
   }
 
   .persona-label {
@@ -144,18 +379,18 @@ import { PROFILE } from '../data/profile.js';
   .persona-switch {
     display: inline-flex;
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 1.5px solid var(--line);
     border-radius: var(--radius-full);
     padding: 4px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   }
 
   .persona-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.5rem;
     border-radius: var(--radius-full);
-    padding: 0.5rem 1.1rem;
+    padding: 0.5rem 1.2rem;
     font-weight: 600;
     font-size: 0.88rem;
     color: var(--mute);
@@ -169,7 +404,7 @@ import { PROFILE } from '../data/profile.js';
   .persona-btn[aria-pressed="true"] {
     background: var(--accent);
     color: var(--accent-ink);
-    box-shadow: 0 2px 10px var(--accent-glow);
+    box-shadow: 0 2px 14px var(--accent-glow);
   }
 
   .badge-status {
@@ -196,19 +431,15 @@ import { PROFILE } from '../data/profile.js';
   }
 
   @keyframes pulseGlow {
-    0% {
-      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-    }
-    70% {
-      box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
   }
 
   .hero-title {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: clamp(3rem, 5.5vw, 4.75rem);
+    line-height: 1.05;
   }
 
   .hero-surname {
@@ -233,7 +464,7 @@ import { PROFILE } from '../data/profile.js';
 
   .typewriter-role {
     font-family: var(--font-display);
-    font-size: clamp(1.35rem, 3.5vw, 2.25rem);
+    font-size: clamp(1.35rem, 2.5vw, 2.1rem);
     font-weight: 700;
     color: var(--accent);
     min-height: 1.3em;
@@ -242,8 +473,9 @@ import { PROFILE } from '../data/profile.js';
   }
 
   .hero-lead {
-    max-width: 620px;
-    font-size: 1.15rem;
+    max-width: 540px;
+    font-size: 1.1rem;
+    line-height: 1.65;
     margin-bottom: 2.25rem;
   }
 
@@ -252,7 +484,7 @@ import { PROFILE } from '../data/profile.js';
     flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 2.75rem;
+    margin-bottom: 2.5rem;
   }
 
   .social-pill {
@@ -283,8 +515,8 @@ import { PROFILE } from '../data/profile.js';
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius-full);
-    padding: 0.5rem 1rem;
-    font-size: 0.88rem;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.85rem;
     color: var(--mute);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
   }
@@ -292,6 +524,688 @@ import { PROFILE } from '../data/profile.js';
   .quick-facts li svg {
     color: var(--accent);
     flex-shrink: 0;
+  }
+
+  /* -------------------------------------------------------------------------
+     RIGHT COLUMN: 3D INTERACTIVE LAPTOP & TOKENS STAGE
+     ------------------------------------------------------------------------- */
+  .hero-col-stage {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1400px;
+    -webkit-perspective: 1400px;
+  }
+
+  .stage-viewport {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* -------------------------------------------------------------------------
+     FLOATING PHYSICS TOKENS (REPELLED BY CURSOR)
+     ------------------------------------------------------------------------- */
+  .tokens-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  :global(.floating-token-badge) {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1.5px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--ink);
+    cursor: default;
+    pointer-events: auto;
+    will-change: transform, opacity;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  :global(:root[data-theme="dark"] .floating-token-badge) {
+    background: rgba(17, 23, 38, 0.88);
+    border-color: rgba(45, 55, 75, 0.8);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    color: #f8fafc;
+  }
+
+  :global(.floating-token-badge .token-icon) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+
+  /* -------------------------------------------------------------------------
+     3D LAPTOP RIG
+     ------------------------------------------------------------------------- */
+  .laptop-rig {
+    position: relative;
+    width: 480px;
+    height: 340px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    z-index: 10;
+  }
+
+  /* Floor Shadow */
+  .laptop-floor-shadow {
+    position: absolute;
+    bottom: -15px;
+    left: 10%;
+    width: 80%;
+    height: 45px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, transparent 75%);
+    filter: blur(14px);
+    transform: rotateX(85deg) translateZ(-40px);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  /* 3D Mesh Group for Tilt & 720deg Spin */
+  .laptop-mesh {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    will-change: transform, filter;
+    transform: rotateX(15deg) rotateY(-18deg) rotateZ(3deg);
+    transition: filter 0.3s ease;
+  }
+
+  /* -------------------------------------------------------------------------
+     LAPTOP BASE (Bottom Chassis)
+     ------------------------------------------------------------------------- */
+  .laptop-base {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    height: 270px;
+    background: linear-gradient(145deg, #2a2e39 0%, #171a22 100%);
+    border-radius: 18px 18px 14px 14px;
+    box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.6);
+    transform: rotateX(72deg) translateZ(0px);
+    transform-origin: bottom center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .base-surface {
+    padding: 1.5rem 1.8rem 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .keyboard-deck {
+    background: rgba(10, 12, 16, 0.85);
+    border-radius: 10px;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .key-row {
+    display: flex;
+    gap: 3.5px;
+    justify-content: space-between;
+  }
+
+  .k-key {
+    flex: 1;
+    height: 10px;
+    background: #1c202a;
+    border-radius: 2px;
+    border-bottom: 1.5px solid #0d0f14;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .k-tab { flex: 1.4; }
+  .k-ret { flex: 1.4; }
+  .k-caps { flex: 1.6; }
+  .k-enter { flex: 1.6; }
+  .k-shift { flex: 2; }
+  .k-space { flex: 6; }
+
+  .trackpad {
+    align-self: center;
+    width: 140px;
+    height: 75px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.2rem;
+  }
+
+  .base-lip {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: #1c202a;
+    border-radius: 0 0 14px 14px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .lip-notch {
+    width: 48px;
+    height: 3px;
+    background: #333a47;
+    border-radius: 0 0 4px 4px;
+  }
+
+  /* -------------------------------------------------------------------------
+     LAPTOP LID (Screen Chassis angled backward)
+     ------------------------------------------------------------------------- */
+  .laptop-lid {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    height: 290px;
+    background: #0f1218;
+    border-radius: 16px 16px 4px 4px;
+    transform: rotateX(-18deg) translateZ(0px);
+    transform-origin: bottom center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 2px solid #282e3c;
+    overflow: hidden;
+  }
+
+  .lid-bezel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px 14px;
+    background: #0a0d13;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lid-camera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12px;
+  }
+
+  .camera-lens {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #000000;
+    border: 1px solid #1e2430;
+    box-shadow: inset 0 0 2px rgba(6, 182, 212, 0.6);
+  }
+
+  .laptop-screen-display {
+    position: relative;
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0f172a;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Glare Overlay */
+  .screen-glare {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(125deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .lid-hinge {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    height: 8px;
+    background: #1e222d;
+    border-radius: 4px 4px 0 0;
+  }
+
+  /* -------------------------------------------------------------------------
+     SCREEN VIEW 1: DEVELOPER IDE (VS Code / IntelliJ)
+     ------------------------------------------------------------------------- */
+  .screen-view {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.96);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .screen-view.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+  }
+
+  .screen-dev {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: var(--font-mono);
+  }
+
+  .ide-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 24px;
+    padding: 0 8px;
+    background: #161b22;
+    border-bottom: 1px solid #21262d;
+    font-size: 0.68rem;
+  }
+
+  .traffic-dots {
+    display: flex;
+    gap: 4px;
+  }
+
+  .dot {
+    width: 6.5px;
+    height: 6.5px;
+    border-radius: 50%;
+  }
+  .dot-red { background: #ff5f56; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #27c93f; }
+
+  .ide-tabs {
+    display: flex;
+    gap: 2px;
+  }
+
+  .ide-tab {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 7px;
+    border-radius: 3px 3px 0 0;
+    font-size: 0.65rem;
+    color: #8b949e;
+  }
+
+  .ide-tab.active {
+    background: #0d1117;
+    color: #58a6ff;
+    border-top: 1.5px solid #388bfd;
+  }
+
+  .ide-env-tag {
+    font-size: 0.6rem;
+    color: #10b981;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .ide-body {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .ide-sidebar {
+    width: 26px;
+    background: #161b22;
+    border-right: 1px solid #21262d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 8px;
+    color: #8b949e;
+  }
+
+  .side-icon.active {
+    color: #58a6ff;
+  }
+
+  .ide-code-pane {
+    flex: 1;
+    display: flex;
+    padding: 6px 8px;
+    font-size: 0.65rem;
+    line-height: 1.45;
+    overflow: hidden;
+  }
+
+  .code-lines {
+    display: flex;
+    flex-direction: column;
+    color: #484f58;
+    padding-right: 8px;
+    border-right: 1px solid #21262d;
+    user-select: none;
+  }
+
+  .code-content {
+    padding-left: 8px;
+    margin: 0;
+    font-family: inherit;
+    color: #c9d1d9;
+  }
+
+  .c-anno { color: #d2a8ff; }
+  .c-kw { color: #ff7b72; }
+  .c-cls { color: #ffa657; font-weight: bold; }
+  .c-fn { color: #79c0ff; }
+  .c-var { color: #7ee787; }
+  .c-str { color: #a5d6ff; }
+
+  .ide-terminal {
+    height: 38px;
+    background: #161b22;
+    border-top: 1px solid #21262d;
+    padding: 3px 8px;
+    font-size: 0.62rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .term-prompt {
+    display: flex;
+    gap: 5px;
+  }
+  .term-user { color: #10b981; }
+  .term-cmd { color: #e6edf3; }
+
+  .term-status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #8b949e;
+  }
+
+  .term-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 5px #10b981;
+  }
+
+  /* -------------------------------------------------------------------------
+     SCREEN VIEW 2: ADOBE PHOTOSHOP / ILLUSTRATOR
+     ------------------------------------------------------------------------- */
+  .screen-des {
+    background: #1e1e1e;
+    color: #cccccc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .adobe-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 22px;
+    padding: 0 8px;
+    background: #252526;
+    border-bottom: 1px solid #333333;
+    font-size: 0.65rem;
+  }
+
+  .adobe-app-badge {
+    background: #001e36;
+    color: #31a8ff;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-weight: 800;
+    font-size: 0.62rem;
+    border: 1px solid #31a8ff;
+  }
+
+  .adobe-menu {
+    display: flex;
+    gap: 8px;
+    color: #999999;
+  }
+
+  .adobe-zoom-tag {
+    color: #777777;
+    font-size: 0.6rem;
+  }
+
+  .adobe-body {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .adobe-toolbar {
+    width: 24px;
+    background: #2b2b2b;
+    border-right: 1px solid #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding-top: 6px;
+    color: #aaaaaa;
+  }
+
+  .tool-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+  }
+
+  .tool-btn.active-pen {
+    background: #007acc;
+    color: #ffffff;
+  }
+
+  .adobe-canvas {
+    flex: 1;
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .canvas-artboard {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    background: #000000;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  }
+
+  .artboard-artwork {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .vector-selection-box {
+    position: absolute;
+    inset: 12px;
+    border: 1px dashed #f43f5e;
+    pointer-events: none;
+  }
+
+  .handle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #ffffff;
+    border: 1px solid #f43f5e;
+  }
+  .h-tl { top: -3px; left: -3px; }
+  .h-tr { top: -3px; right: -3px; }
+  .h-bl { bottom: -3px; left: -3px; }
+  .h-br { bottom: -3px; right: -3px; }
+
+  .vector-anchor {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #f43f5e;
+    box-shadow: 0 0 6px #f43f5e;
+  }
+
+  .bezier-guide-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .adobe-panels {
+    width: 95px;
+    background: #252526;
+    border-left: 1px solid #333333;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 8px;
+    font-size: 0.58rem;
+  }
+
+  .panel-header {
+    color: #888888;
+    font-weight: 700;
+    margin-bottom: 3px;
+    letter-spacing: 0.05em;
+  }
+
+  .layer-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #bbbbbb;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .layer-item.active {
+    background: #37373d;
+    color: #ffffff;
+  }
+
+  .swatches-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+
+  .swatch {
+    height: 12px;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .adobe-statusbar {
+    height: 18px;
+    background: #1e1e1e;
+    border-top: 1px solid #2b2b2b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    font-size: 0.55rem;
+    color: #777777;
+  }
+
+  .stage-hint {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--mute);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .hint-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulseGlow 1.8s infinite;
+  }
+
+  /* -------------------------------------------------------------------------
+     RESPONSIVE ADAPTATIONS
+     ------------------------------------------------------------------------- */
+  @media (max-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .hero-col-stage {
+      height: 420px;
+    }
+    .laptop-rig {
+      width: 420px;
+      height: 300px;
+    }
   }
 
   @media (max-width: 640px) {
@@ -302,5 +1216,381 @@ import { PROFILE } from '../data/profile.js';
     .hero-actions .btn {
       width: 100%;
     }
+    .hero-col-stage {
+      height: 340px;
+    }
+    .laptop-rig {
+      width: 320px;
+      height: 230px;
+    }
   }
 </style>
+
+<script>
+  import { gsap } from 'gsap';
+
+  // ---------------------------------------------------------------------------
+  // FLOATING BADGES CONFIGURATION (DEV & DES CRAFTS)
+  // ---------------------------------------------------------------------------
+  const TOKENS_DATA = [
+    {
+      id: 't1',
+      top: 6,
+      left: 8,
+      duration: 5.5,
+      dev: { name: 'Spring Boot', icon: '🍃', color: '#10b981' },
+      des: { name: 'Photoshop', icon: 'Ps', color: '#38bdf8' }
+    },
+    {
+      id: 't2',
+      top: 10,
+      left: 72,
+      duration: 6.8,
+      dev: { name: 'Angular', icon: '🅰️', color: '#ef4444' },
+      des: { name: 'Illustrator', icon: 'Ai', color: '#f59e0b' }
+    },
+    {
+      id: 't3',
+      top: 42,
+      left: -2,
+      duration: 7.2,
+      dev: { name: 'Java', icon: '☕', color: '#f97316' },
+      des: { name: 'Pen Tool', icon: '✒️', color: '#ec4899' }
+    },
+    {
+      id: 't4',
+      top: 38,
+      left: 80,
+      duration: 6.0,
+      dev: { name: 'Python', icon: '🐍', color: '#eab308' },
+      des: { name: 'Premiere Pro', icon: 'Pr', color: '#9333ea' }
+    },
+    {
+      id: 't5',
+      top: 74,
+      left: 10,
+      duration: 8.0,
+      dev: { name: 'Symfony', icon: '⚡', color: '#6366f1' },
+      des: { name: 'After Effects', icon: 'Ae', color: '#8b5cf6' }
+    },
+    {
+      id: 't6',
+      top: 76,
+      left: 70,
+      duration: 6.5,
+      dev: { name: 'Git & CI/CD', icon: '🐙', color: '#f43f5e' },
+      des: { name: 'Color Palette', icon: '🎨', color: '#f43f5e' }
+    },
+    {
+      id: 't7',
+      top: 2,
+      left: 42,
+      duration: 9.0,
+      dev: { name: 'Telemetry', icon: '📊', color: '#06b6d4' },
+      des: { name: 'Typography', icon: 'Aa', color: '#fb7185' }
+    },
+    {
+      id: 't8',
+      top: 86,
+      left: 40,
+      duration: 7.5,
+      dev: { name: 'MySQL', icon: '🐬', color: '#0284c7' },
+      des: { name: 'Vector Mesh', icon: '📐', color: '#d946ef' }
+    }
+  ];
+
+  // DOM Elements
+  const stageViewport = document.getElementById('stage-viewport');
+  const tokensLayer = document.getElementById('tokens-layer');
+  const laptopRig = document.getElementById('laptop-rig');
+  const laptopMesh = document.getElementById('laptop-mesh');
+  const screenDev = document.getElementById('screen-dev');
+  const screenDes = document.getElementById('screen-des');
+  const heroGlow = document.getElementById('hero-glow');
+  const heroParticles = document.getElementById('hero-particles');
+
+  const modeDevBtn = document.getElementById('mode-dev');
+  const modeDesBtn = document.getElementById('mode-des');
+
+  let currentMode = 'dev';
+  let isSpinningTransition = false;
+
+  // Mouse State
+  const mouse = { x: 0, y: 0, screenX: window.innerWidth / 2, screenY: window.innerHeight / 2 };
+  const currentTilt = { x: 0, y: 0 };
+  const spinRotY = { val: 0 };
+
+  const tokenNodes = [];
+
+  // ---------------------------------------------------------------------------
+  // MOUNT FLOATING BADGES
+  // ---------------------------------------------------------------------------
+  function initTokens() {
+    if (!tokensLayer) return;
+    tokensLayer.innerHTML = '';
+
+    TOKENS_DATA.forEach((data, index) => {
+      const badge = document.createElement('div');
+      badge.className = 'floating-token-badge';
+      badge.id = `token-${data.id}`;
+      badge.style.top = `${data.top}%`;
+      badge.style.left = `${data.left}%`;
+
+      const modeData = currentMode === 'dev' ? data.dev : data.des;
+      badge.innerHTML = `
+        <span class="token-icon" style="background: ${modeData.color}22; color: ${modeData.color};">${modeData.icon}</span>
+        <span class="token-name">${modeData.name}</span>
+      `;
+
+      tokensLayer.appendChild(badge);
+
+      tokenNodes.push({
+        el: badge,
+        config: data,
+        repelX: 0,
+        repelY: 0,
+        floatY: 0,
+        floatRot: 0,
+        angle: Math.random() * 360,
+        spinSpeed: 0.15
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------------------
+  // SPAWN RISING BACKGROUND PARTICLES
+  // ---------------------------------------------------------------------------
+  function spawnParticle() {
+    if (!heroParticles) return;
+    const p = document.createElement('div');
+    p.className = 'stage-particle';
+
+    const size = gsap.utils.random(4, 10);
+    const startX = gsap.utils.random(5, 95);
+    const duration = gsap.utils.random(5, 9);
+    const color = currentMode === 'dev' 
+      ? gsap.utils.random(['#38bdf8', '#34d399', '#818cf8']) 
+      : gsap.utils.random(['#f43f5e', '#ec4899', '#c084fc']);
+
+    p.style.width = `${size}px`;
+    p.style.height = `${size}px`;
+    p.style.left = `${startX}%`;
+    p.style.background = color;
+    p.style.boxShadow = `0 0 10px ${color}`;
+    p.style.opacity = '0.35';
+
+    heroParticles.appendChild(p);
+
+    gsap.to(p, {
+      y: '-90vh',
+      x: gsap.utils.random(-30, 30),
+      opacity: 0,
+      duration: duration,
+      ease: 'power1.out',
+      onComplete: () => p.remove()
+    });
+  }
+
+  // ---------------------------------------------------------------------------
+  // CHOREOGRAPHED SODA-STYLE 720° TRANSITION
+  // ---------------------------------------------------------------------------
+  export function triggerModeTransition(targetMode) {
+    if (isSpinningTransition || targetMode === currentMode) return;
+    isSpinningTransition = true;
+
+    // 1. Ambient Glow Morph
+    if (heroGlow) {
+      const glowColor = targetMode === 'des'
+        ? 'radial-gradient(circle, rgba(244, 63, 94, 0.35) 0%, rgba(168, 85, 247, 0.15) 45%, transparent 70%)'
+        : 'radial-gradient(circle, rgba(59, 130, 246, 0.32) 0%, rgba(16, 185, 129, 0.18) 45%, transparent 70%)';
+      heroGlow.style.background = glowColor;
+    }
+
+    // 2. 720° Laptop Spin with Motion Blur (Exact Soda choreography)
+    // Phase 1: 0 -> 360deg with blur 14px over 0.55s
+    gsap.to(spinRotY, {
+      val: spinRotY.val + 360,
+      duration: 0.55,
+      ease: 'power2.in'
+    });
+
+    if (laptopMesh) {
+      gsap.to(laptopMesh, {
+        filter: 'blur(14px) drop-shadow(0 35px 50px rgba(0,0,0,0.6))',
+        duration: 0.55,
+        ease: 'power2.in',
+        onComplete: () => {
+          // HOT-SWAP SCREEN at peak!
+          if (targetMode === 'des') {
+            screenDev?.classList.remove('active');
+            screenDes?.classList.add('active');
+          } else {
+            screenDes?.classList.remove('active');
+            screenDev?.classList.add('active');
+          }
+
+          // Phase 2: 360deg -> 720deg with back.out(0.7) and blur returning to 0px
+          gsap.to(spinRotY, {
+            val: spinRotY.val + 360,
+            duration: 1.4,
+            ease: 'back.out(0.7)'
+          });
+
+          gsap.to(laptopMesh, {
+            filter: 'blur(0px) drop-shadow(0 35px 60px rgba(0,0,0,0.4))',
+            duration: 1.4,
+            ease: 'back.out(0.7)'
+          });
+        }
+      });
+    }
+
+    // 3. Tokens Implode -> Icon/Label Swap -> Explode
+    const badgeElements = tokenNodes.map(t => t.el);
+
+    gsap.to(badgeElements, {
+      scale: 0.1,
+      opacity: 0,
+      duration: 0.45,
+      ease: 'power2.in',
+      onComplete: () => {
+        // Swap content while hidden
+        tokenNodes.forEach(t => {
+          const modeData = targetMode === 'dev' ? t.config.dev : t.config.des;
+          t.el.innerHTML = `
+            <span class="token-icon" style="background: ${modeData.color}22; color: ${modeData.color};">${modeData.icon}</span>
+            <span class="token-name">${modeData.name}</span>
+          `;
+        });
+
+        // Hold 0.25s then explode back out with spring bounce
+        setTimeout(() => {
+          tokenNodes.forEach(t => {
+            const jitterX = gsap.utils.random(-40, 40);
+            const jitterY = gsap.utils.random(-40, 40);
+
+            gsap.fromTo(t.el,
+              { x: jitterX, y: jitterY, scale: 0.1, opacity: 0 },
+              {
+                x: 0,
+                y: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 0.85,
+                ease: 'back.out(1.5)',
+                onComplete: () => {
+                  t.repelX = 0;
+                  t.repelY = 0;
+                }
+              }
+            );
+          });
+
+          currentMode = targetMode;
+          isSpinningTransition = false;
+        }, 250);
+      }
+    });
+  }
+
+  // ---------------------------------------------------------------------------
+  // MOUSE TRACKING & CONTINUOUS PHYSICS RAF LOOP
+  // ---------------------------------------------------------------------------
+  window.addEventListener('mousemove', (e) => {
+    mouse.screenX = e.clientX;
+    mouse.screenY = e.clientY;
+
+    if (stageViewport) {
+      const rect = stageViewport.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      // Local normalized coordinates (-1 to 1)
+      mouse.x = Math.max(-1, Math.min(1, (e.clientX - centerX) / (rect.width / 2)));
+      mouse.y = Math.max(-1, Math.min(1, (e.clientY - centerY) / (rect.height / 2)));
+    }
+  });
+
+  // Laptop direct click triggers toggle
+  laptopRig?.addEventListener('click', () => {
+    const nextMode = currentMode === 'dev' ? 'des' : 'dev';
+    const targetBtn = nextMode === 'des' ? modeDesBtn : modeDevBtn;
+    if (targetBtn) {
+      targetBtn.click();
+    } else {
+      triggerModeTransition(nextMode);
+    }
+  });
+
+  // Listen to persona switch button clicks
+  modeDevBtn?.addEventListener('click', () => triggerModeTransition('dev'));
+  modeDesBtn?.addEventListener('click', () => triggerModeTransition('des'));
+
+  function physicsLoop(timestamp) {
+    const elapsed = timestamp * 0.001;
+
+    // 1. Mouse Lerp Interpolation
+    currentTilt.x += (mouse.x - currentTilt.x) * 0.05;
+    currentTilt.y += (mouse.y - currentTilt.y) * 0.05;
+
+    // 2. Real-Time 3D Laptop Tilt + Spin
+    // Base resting: rotateX(15deg) rotateY(-18deg) rotateZ(3deg)
+    const tiltX = 15 - (currentTilt.y * 14);
+    const tiltY = -18 + (currentTilt.x * 22) + spinRotY.val;
+    const tiltZ = 3 + (currentTilt.x * 4);
+
+    if (laptopMesh) {
+      laptopMesh.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) rotateZ(${tiltZ}deg)`;
+    }
+
+    // 3. Floating Tokens Repulsion & Levitation Physics
+    if (!isSpinningTransition) {
+      tokenNodes.forEach((token) => {
+        // Floating oscillation
+        const floatPhase = elapsed * ((Math.PI * 2) / token.config.duration);
+        token.floatY = Math.sin(floatPhase) * 12;
+        token.floatRot = Math.cos(floatPhase * 0.8) * 5;
+
+        // Pointer Repulsion calculation
+        const rect = token.el.getBoundingClientRect();
+        const badgeCenterX = rect.left + rect.width / 2;
+        const badgeCenterY = rect.top + rect.height / 2;
+
+        const diffX = mouse.screenX - badgeCenterX;
+        const diffY = mouse.screenY - badgeCenterY;
+        const dist = Math.hypot(diffX, diffY);
+        const repelRadius = 320;
+
+        let targetRepelX = 0;
+        let targetRepelY = 0;
+        let force = 0;
+
+        if (dist < repelRadius && dist > 1) {
+          force = 1 - (dist / repelRadius);
+          const normX = diffX / dist;
+          const normY = diffY / dist;
+          targetRepelX = normX * (-75 * force);
+          targetRepelY = normY * (-75 * force);
+        }
+
+        token.repelX += (targetRepelX - token.repelX) * 0.1;
+        token.repelY += (targetRepelY - token.repelY) * 0.1;
+
+        // Parallax factor
+        const parallaxX = currentTilt.x * 35;
+        const parallaxY = currentTilt.y * 35;
+
+        token.el.style.transform = `translate(${token.repelX + parallaxX}px, ${token.floatY + token.repelY + parallaxY}px) rotate(${token.floatRot}deg)`;
+      });
+    }
+
+    requestAnimationFrame(physicsLoop);
+  }
+
+  // ---------------------------------------------------------------------------
+  // BOOTSTRAP HERO STAGE
+  // ---------------------------------------------------------------------------
+  initTokens();
+  setInterval(spawnParticle, 450);
+  requestAnimationFrame(physicsLoop);
+</script>
